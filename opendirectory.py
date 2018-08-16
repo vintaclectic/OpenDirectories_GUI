@@ -25,7 +25,7 @@ def open_url():
     }
     url = 'https://www.google.com/search?q='+options_dictionary[drop_text1.get()]+title+' intitle:"index of" -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)'
     if drop_text1.get()!='Torrent': url+=' -inurl:(jsp|pl|php|html|aspx|htm|cf|shtml)'
-    os.startfile(url)
+    webbrowser.open(url)
 
 button_1=Button(root, text='GO', command=open_url, width=4) 
 label.grid(row=0) 
