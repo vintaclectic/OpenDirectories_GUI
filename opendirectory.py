@@ -4,24 +4,24 @@ from Tkinter import *
 
 root = Tk() 
 root.wm_title("OpenURL") 
-root.resizable(0,0)
+root.resizable(100,100)
 entry_text=StringVar() 
 drop_text1=StringVar()
 label = Label(root, text='File name')
-entry = Entry(root, width=30, textvariable=entry_text)
-drop_text1.set("E-book")
-drop1 = OptionMenu(root,drop_text1,'Music','Video','E-book','Kindle','Images','Archive','Torrent')
+entry = Entry(root, width=50, textvariable=entry_text)
+drop_text1.set("Video")
+drop1 = OptionMenu(root,drop_text1,'Video','Music','Ebook','Software','Images','Compressed','Torrent')
 
 def open_url():
     global drop_text1
     title=entry_text.get()
     options_dictionary = {
-    'Music':'(.ogg|.mp3|.flac|.wma|.m4a) ',
     'Video':'(.mkv|.mp4|.avi|.mov|.mpg|.wmv) ',
-    'E-book':'(.MOBI|.CBZ|.CBR|.CBC|.CHM|.EPUB|.FB2|.LIT|.LRF|.ODT|.PDF|.PRC|.PDB|.PML|.RB|.RTF|.TCR) ',
-    'Kindle':'(.MOBI|.EPUB|.LIT) ',
+    'Music':'(.ogg|.mp3|.flac|.wma|.m4a|.ac3|.wav) ',
+    'Ebook':'(.MOBI|.CBZ|.CBR|.CBC|.CHM|.EPUB|.FB2|.LIT|.LRF|.ODT|.PDF|.PRC|.PDB|.PML|.RB|.RTF|.TCR) ',
+    'Software':'(.apk|.exe|.iso|.rar|.tar|.zip) ',
     'Images':'(.jpg|.gif|.png|.tif|.tiff|.psd) ',
-    'Archive':'(.rar|.tar|.zip|.sit) ',
+    'Compressed':'(.7z|.bz2|.gz|.iso|.rar|.zip.tar|.sit) ',
     'Torrent':'.torrent '
     }
     url = 'https://www.google.com/search?q='+options_dictionary[drop_text1.get()]+title+' intitle:"index of" -inurl:(listen77|mp3raid|mp3toss|mp3drug|index_of|wallywashis)'
