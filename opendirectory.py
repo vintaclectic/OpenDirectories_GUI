@@ -31,7 +31,7 @@ def open_url():
 button_1=Button(root, text='GO', command=open_url, width=4) 
 label.grid(row=0) 
 entry.grid(row=0, column=1,columnspan=3) 
-button_1.grid(row=0, column=4)
-drop1.grid(row=1, column=1)
+button_1.grid(row=0, column=5)
+drop1.grid(row=0, column=4)
 
 root.mainloop()
